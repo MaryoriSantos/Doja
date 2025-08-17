@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Especializados - DOJA S.A.S</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Servicios especializados de inspección para estaciones de servicio. Pruebas de hermeticidad, aforo láser, estanqueidad y más. Acreditación ONAC.">
+    <meta name="keywords" content="DOJA servicios, pruebas hermeticidad, aforo Calibex 3D, estanqueidad, conductividad, inspección tanques">
+    <meta name="author" content="DOJA S.A.S">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Servicios Especializados - DOJA S.A.S">
+    <meta property="og:description" content="Descubre todos nuestros servicios especializados para estaciones de servicio con acreditación ONAC.">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo-default-450x37v2.png" alt="DOJA S.A.S">
+            </a>
+            
+            <div class="d-none d-lg-flex align-items-center me-4">
+                <span class="onac-badge me-3">
+                    <i class="fas fa-certificate me-1"></i>
+                    ONAC 24-OIN-059
+                </span>
+                <div class="text-muted">
+                    <i class="fas fa-phone me-1"></i>
+                    <a href="https://api.whatsapp.com/send?phone=+573112438979&text=Hola,%20DOJA%20SAS.%20Necesito%20información." 
+                       class="text-decoration-none" target="_blank">311 243 89 79</a>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#clientes">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-custom">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">
+                            <i class="fas fa-home me-1"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Servicios Especializados</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="section-title">Servicios Especializados</h1>
+                    <p class="lead text-muted">
+                        Ofrecemos una amplia gama de servicios técnicos especializados para estaciones de servicio, 
+                        respaldados por nuestra acreditación ONAC y más de 27 años de experiencia en el sector.
+                    </p>
+                    <span class="onac-badge">
+                        <i class="fas fa-certificate me-1"></i>
+                        Acreditación ONAC 24-OIN-059
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Especializados con Pestañas -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Pestañas de Servicios -->
+            <div class="services-tabs">
+                <ul class="nav nav-pills d-flex justify-content-center mb-4" id="services-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="hermeticidad-tab" data-bs-toggle="pill" 
+                                data-bs-target="#hermeticidad" type="button">
+                            <i class="fas fa-shield-alt me-2"></i>
+                            Hermeticidad
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="aforo-tab" data-bs-toggle="pill" 
+                                data-bs-target="#aforo" type="button">
+                            <i class="fas fa-cube me-2"></i>
+                            Aforo
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="estanqueidad-tab" data-bs-toggle="pill" 
+                                data-bs-target="#estanqueidad" type="button">
+                            <i class="fas fa-water me-2"></i>
+                            Estanqueidad
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="conductividad-tab" data-bs-toggle="pill" 
+                                data-bs-target="#conductividad" type="button">
+                            <i class="fas fa-bolt me-2"></i>
+                            Conductividad
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="otros-tab" data-bs-toggle="pill" 
+                                data-bs-target="#otros" type="button">
+                            <i class="fas fa-plus me-2"></i>
+                            Otros Servicios
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Contenido de las Pestañas -->
+                <div class="tab-content" id="services-tabContent">
+                    <!-- Pruebas de Hermeticidad -->
+                    <div class="tab-pane fade show active" id="hermeticidad" role="tabpanel">
+                        <div class="text-center mb-5">
+                            <h3 class="text-primary-custom mb-3">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Pruebas de Hermeticidad
+                            </h3>
+                            <p class="lead text-muted">
+                                Servicios especializados para verificar la integridad de tanques y sistemas de tuberías
+                            </p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Pruebas de hermeticidad en tanques</h5>
+                                    <p class="text-muted mb-3">
+                                        Servicio técnico respaldado por acreditación ONAC 24-OIN-059. 
+                                        Tecnología LTTS bajo normas NFPA 30 y Resolución 40198 de 2021.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Tanques de gasolina y diésel</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Tanques de aviación (Jet A1)</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Certificación ONAC</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Reportes técnicos detallados</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Cumplimiento normativo</li>
+                                    </ul>
+                                    <div class="small text-muted">
+                                        <strong>Normativas:</strong> NFPA 30, Resolución 40198 de 2021, LTTS
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Pruebas de hermeticidad en tuberías</h5>
+                                    <p class="text-muted mb-3">
+                                        Evaluación integral de líneas de combustible y sistemas de distribución 
+                                        con equipos de alta precisión y metodología especializada.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Líneas de succión y retorno</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Sistemas de recuperación de vapores</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Tuberías de distribución</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Conexiones y accesorios</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Evaluación de integridad</li>
+                                    </ul>
+                                    <div class="small text-muted">
+                                        <strong>Metodología:</strong> Presión hidrostática, detección de fugas
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-12">
+                                <div class="service-card bg-light border-0">
+                                    <h6 class="fw-bold text-primary-custom mb-3">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Información Técnica Adicional
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="fw-bold mb-2">Equipos utilizados:</h6>
+                                            <ul class="list-unstyled small">
+                                                <li>• Sistemas LTTS (Line Tightness Testing System)</li>
+                                                <li>• Manómetros de alta precisión</li>
+                                                <li>• Equipos de presurización</li>
+                                                <li>• Detectores de fugas especializados</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="fw-bold mb-2">Proceso de inspección:</h6>
+                                            <ul class="list-unstyled small">
+                                                <li>• Evaluación preliminar del sistema</li>
+                                                <li>• Preparación y aislamiento</li>
+                                                <li>• Aplicación de presión de prueba</li>
+                                                <li>• Monitoreo y registro de datos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicios de Aforo -->
+                    <div class="tab-pane fade" id="aforo" role="tabpanel">
+                        <div class="text-center mb-5">
+                            <h3 class="text-primary-custom mb-3">
+                                <i class="fas fa-cube me-2"></i>
+                                Servicios de Aforo
+                            </h3>
+                            <p class="lead text-muted">
+                                Medición precisa de la capacidad de tanques con tecnología avanzada
+                            </p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Aforo láser Calibex 3D</h5>
+                                    <p class="text-muted mb-3">
+                                        Proceso de calibración interno con tecnología Calibex 3D, 
+                                        ideal para obtener tablas precisas sin desmontajes ni interrupciones operativas.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Precisión del 0.2%</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Tablas de aforo en 48 horas</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Sin interrupción operativa</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Tecnología láser 3D</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Certificación oficial</li>
+                                    </ul>
+                                    <div class="small text-muted">
+                                        <strong>Ventajas:</strong> Rapidez, precisión, no invasivo
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Aforo volumétrico de tanques</h5>
+                                    <p class="text-muted mb-3">
+                                        Medición directa de la capacidad útil del tanque, 
+                                        con manipulación controlada del combustible y precisión certificada.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Equipos de medición certificados</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Procesamiento automatizado</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Tablas de aforo oficiales</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Control de temperatura</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Corrección por deformación</li>
+                                    </ul>
+                                    <div class="small text-muted">
+                                        <strong>Método:</strong> Volumétrico directo con agua calibrada
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="service-card bg-light border-0">
+                                    <h6 class="fw-bold text-primary-custom mb-3">
+                                        <i class="fas fa-cog me-2"></i>
+                                        Proceso Calibex 3D
+                                    </h6>
+                                    <ol class="list-unstyled small">
+                                        <li>1. Escaneo láser 3D del interior del tanque</li>
+                                        <li>2. Procesamiento de datos con software especializado</li>
+                                        <li>3. Generación de modelo tridimensional</li>
+                                        <li>4. Cálculo de volúmenes por nivel</li>
+                                        <li>5. Entrega de tabla de aforo certificada</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-card bg-light border-0">
+                                    <h6 class="fw-bold text-primary-custom mb-3">
+                                        <i class="fas fa-clipboard-list me-2"></i>
+                                        Tipos de tanques
+                                    </h6>
+                                    <ul class="list-unstyled small">
+                                        <li>• Tanques horizontales cilíndricos</li>
+                                        <li>• Tanques verticales</li>
+                                        <li>• Tanques rectangulares</li>
+                                        <li>• Tanques de formas irregulares</li>
+                                        <li>• Tanques subterráneos y aéreos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pruebas de Estanqueidad -->
+                    <div class="tab-pane fade" id="estanqueidad" role="tabpanel">
+                        <div class="text-center mb-5">
+                            <h3 class="text-primary-custom mb-3">
+                                <i class="fas fa-water me-2"></i>
+                                Pruebas de Estanqueidad
+                            </h3>
+                            <p class="lead text-muted">
+                                Verificación de la integridad de sistemas de contención y protección ambiental
+                            </p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Estanqueidad en cajas contenedoras</h5>
+                                    <p class="text-muted mb-3">
+                                        Verificación del estado de cajas que rodean tanques, 
+                                        dispensadores y spill containers según normativa ambiental.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Cumplimiento Resolución 40198 de 2021</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Detección temprana de filtraciones</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Sistemas de contención secundaria</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Evaluación de drenajes</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Protección ambiental</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Pruebas de integridad estructural</h5>
+                                    <p class="text-muted mb-3">
+                                        Evaluación completa de la integridad de sistemas de contención 
+                                        y elementos de seguridad ambiental.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Sistemas de doble contención</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Monitoreo intersticial</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Certificación ambiental</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Evaluación de membranas</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Sistemas de detección</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Verificación de Conductividad -->
+                    <div class="tab-pane fade" id="conductividad" role="tabpanel">
+                        <div class="text-center mb-5">
+                            <h3 class="text-primary-custom mb-3">
+                                <i class="fas fa-bolt me-2"></i>
+                                Verificación de Conductividad
+                            </h3>
+                            <p class="lead text-muted">
+                                Servicios especializados en sistemas eléctricos y de seguridad antiestática
+                            </p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Conductividad pico-chasis</h5>
+                                    <p class="text-muted mb-3">
+                                        Comprobación de continuidad eléctrica entre pico de manguera 
+                                        y dispensador para descarga segura de electricidad estática.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Resistencia menor a 1M Ω</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Cumplimiento normativa MinMinas</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Seguridad antiestática</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Prevención de incendios</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Certificación de seguridad</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-plug"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Sistemas de puesta a tierra</h5>
+                                    <p class="text-muted mb-3">
+                                        Verificación y medición de resistencias en sistemas de puesta a tierra 
+                                        para instalaciones petroleras y de combustibles.
+                                    </p>
+                                    <ul class="list-unstyled small mb-4">
+                                        <li><i class="fas fa-check text-success me-2"></i>Medición de resistividad del suelo</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Sistemas de protección catódica</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Certificación eléctrica</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Mallas de tierra especializadas</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Normativas NTC y RETIE</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-12">
+                                <div class="service-card bg-light border-0">
+                                    <h6 class="fw-bold text-primary-custom mb-3">
+                                        <i class="fas fa-shield-alt me-2"></i>
+                                        Importancia de la Conductividad en Estaciones de Servicio
+                                    </h6>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-2">Seguridad:</h6>
+                                            <ul class="list-unstyled small">
+                                                <li>• Prevención de descargas eléctricas</li>
+                                                <li>• Eliminación de electricidad estática</li>
+                                                <li>• Protección contra incendios</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-2">Normatividad:</h6>
+                                            <ul class="list-unstyled small">
+                                                <li>• Resolución MinMinas</li>
+                                                <li>• Normas RETIE</li>
+                                                <li>• Estándares internacionales</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-2">Beneficios:</h6>
+                                            <ul class="list-unstyled small">
+                                                <li>• Operación segura</li>
+                                                <li>• Cumplimiento legal</li>
+                                                <li>• Protección de equipos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Otros Servicios -->
+                    <div class="tab-pane fade" id="otros" role="tabpanel">
+                        <div class="text-center mb-5">
+                            <h3 class="text-primary-custom mb-3">
+                                <i class="fas fa-plus me-2"></i>
+                                Otros Servicios Especializados
+                            </h3>
+                            <p class="lead text-muted">
+                                Servicios complementarios para el mantenimiento integral de estaciones de servicio
+                            </p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-microscope"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Análisis de laboratorio</h5>
+                                    <p class="text-muted mb-3">
+                                        Análisis fisicoquímicos de combustibles y análisis de suelos contaminados 
+                                        para evaluación ambiental.
+                                    </p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-check text-success me-2"></i>Calidad de combustibles</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Análisis de suelos</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Estudios ambientales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Inspecciones técnicas</h5>
+                                    <p class="text-muted mb-3">
+                                        Inspecciones integrales de instalaciones y equipos según normativa vigente 
+                                        del sector petrolero.
+                                    </p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-check text-success me-2"></i>Evaluación de equipos</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Cumplimiento normativo</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Reportes técnicos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Mantenimiento preventivo</h5>
+                                    <p class="text-muted mb-3">
+                                        Programas de mantenimiento para sistemas de almacenamiento y distribución 
+                                        de combustibles.
+                                    </p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-check text-success me-2"></i>Planes personalizados</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Mantenimiento preventivo</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Seguimiento continuo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Estudios de suelos</h5>
+                                    <p class="text-muted mb-3">
+                                        Caracterización geotécnica y ambiental de suelos para proyectos 
+                                        de estaciones de servicio nuevas o existentes.
+                                    </p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-check text-success me-2"></i>Estudios geotécnicos</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Evaluación de contaminación</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Caracterización ambiental</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-3">Consultoría técnica</h5>
+                                    <p class="text-muted mb-3">
+                                        Asesoría especializada para el diseño, construcción y operación 
+                                        de instalaciones petroleras.
+                                    </p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-check text-success me-2"></i>Diseño de instalaciones</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Asesoría normativa</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Optimización operativa</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-5">
+                            <a href="https://api.whatsapp.com/send?phone=+573112438979&text=Hola,%20DOJA%20SAS.%20Necesito%20información%20sobre%20servicios%20adicionales." 
+                               class="btn btn-custom-primary btn-lg" target="_blank">
+                                <i class="fab fa-whatsapp me-2"></i>
+                                Consultar servicios adicionales
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">¿Necesitas más información?</h2>
+                    <p class="lead mb-4">
+                        Nuestro equipo de expertos está listo para ayudarte con cualquier consulta 
+                        sobre nuestros servicios especializados.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="https://api.whatsapp.com/send?phone=+573112438979&text=Hola,%20DOJA%20SAS.%20Necesito%20información%20sobre%20servicios." 
+                           class="btn btn-warning btn-lg" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            Contactar por WhatsApp
+                        </a>
+                        <a href="mailto:inspecciones@doja.com.co" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-envelope me-2"></i>
+                            Enviar email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-warning mb-4">
+                        <i class="fas fa-phone me-2"></i>
+                        Contáctanos
+                    </h5>
+                    <div class="mb-3">
+                        <i class="fas fa-phone me-2 text-warning"></i>
+                        <a href="https://api.whatsapp.com/send?phone=+573112438979" 
+                           class="text-light text-decoration-none" target="_blank">311 243 89 79</a>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-envelope me-2 text-warning"></i>
+                        <div>
+                            <a href="mailto:inspecciones@doja.com.co" class="text-light text-decoration-none">inspecciones@doja.com.co</a><br>
+                            <a href="mailto:gerencia@doja.com.co" class="text-light text-decoration-none">gerencia@doja.com.co</a>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-map-marker-alt me-2 text-warning"></i>
+                        <span>Calle 127 # 48-63 Piso 2<br>Bogotá - Colombia</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="text-warning mb-4">Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-light text-decoration-none">
+                                <i class="fas fa-home me-2 text-warning"></i>
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#nosotros" class="text-light text-decoration-none">
+                                <i class="fas fa-users me-2 text-warning"></i>
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="servicios.html" class="text-light text-decoration-none">
+                                <i class="fas fa-cogs me-2 text-warning"></i>
+                                Servicios
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#clientes" class="text-light text-decoration-none">
+                                <i class="fas fa-handshake me-2 text-warning"></i>
+                                Clientes
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#contacto" class="text-light text-decoration-none">
+                                <i class="fas fa-envelope me-2 text-warning"></i>
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="text-warning mb-4">Síguenos</h5>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="https://www.facebook.com/DojaTanknology" target="_blank" 
+                           class="text-light fs-4">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/doja-tanknology-1626921a5" target="_blank" 
+                           class="text-light fs-4">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-light fs-4">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <span class="onac-badge">
+                        <i class="fas fa-certificate me-1"></i>
+                        ONAC 24-OIN-059
+                    </span>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-warning mb-2">Certificaciones</h6>
+                        <small class="text-muted">
+                            • Acreditación ONAC<br>
+                            • Resolución 40198 de 2021<br>
+                            • Normativas NFPA 30<br>
+                            • MinMinas y RETIE
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 DOJA S.A.S. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="politicas.html" class="text-light text-decoration-none me-3">
+                        Política de privacidad
+                    </a>
+                    <a href="index.html" class="text-light text-decoration-none">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://api.whatsapp.com/send?phone=+573112438979&text=Hola,%20DOJA%20SAS.%20Necesito%20información%20sobre%20servicios." 
+       target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript for Services -->
+    <script>
+        // Función para manejar la navegación directa a pestañas desde URL
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si hay un hash en la URL para abrir una pestaña específica
+            const hash = window.location.hash;
+            if (hash) {
+                const tabId = hash.substring(1); // Remover el #
+                const tabButton = document.getElementById(tabId + '-tab');
+                const tabContent = document.getElementById(tabId);
+                
+                if (tabButton && tabContent) {
+                    // Remover clase active de todas las pestañas
+                    document.querySelectorAll('.nav-link').forEach(tab => tab.classList.remove('active'));
+                    document.querySelectorAll('.tab-pane').forEach(pane => {
+                        pane.classList.remove('show', 'active');
+                    });
+                    
+                    // Activar la pestaña específica
+                    tabButton.classList.add('active');
+                    tabContent.classList.add('show', 'active');
+                    
+                    // Hacer scroll suave a la sección
+                    setTimeout(() => {
+                        tabContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+            
+            // Manejar clicks en pestañas para actualizar URL
+            document.querySelectorAll('[data-bs-toggle="pill"]').forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function (e) {
+                    const targetId = e.target.getAttribute('data-bs-target').substring(1);
+                    window.history.replaceState(null, null, '#' + targetId);
+                });
+            });
+            
+            // Animación de entrada para las tarjetas de servicios
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Aplicar animación a las tarjetas de servicios
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
