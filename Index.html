@@ -12,26 +12,404 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="DOJA S.A.S - Servicios de inspección para estaciones de servicio respaldados por acreditación ONAC. Más de 27 años de experiencia en el sector.">
-    <meta name="keywords" content="DOJA SAS, inspección estaciones servicio, ONAC, pruebas hermeticidad, aforo Calibex 3D, MinMinas">
-    <meta name="author" content="DOJA S.A.S">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="DOJA S.A.S - Servicios de Inspección para Estaciones de Servicio">
-    <meta property="og:description" content="Servicios de inspección respaldados por acreditación ONAC con más de 27 años de experiencia.">
-    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #ffc107;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background-color: var(--primary-color) !important;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .navbar-light .navbar-toggler {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+        }
+
+        .onac-badge {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--primary-color);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-custom-primary {
+            background: linear-gradient(135deg, var(--secondary-color), #ffb300);
+            border: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-custom-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.6);
+            color: var(--dark-text);
+        }
+
+        .btn-outline-custom {
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--secondary-color), #ffb300);
+            border-radius: 2px;
+        }
+
+        .section-title.text-start::after {
+            left: 0;
+            transform: none;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--primary-color);
+        }
+
+        .tab-content-custom {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), #1e3d72);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(44, 90, 160, 0.3);
+        }
+
+        /* Estilos para la sección de clientes mejorada */
+        .clients-section {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .client-item {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo-container {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .client-logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .client-item:hover .client-logo-container {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .client-item:hover .client-logo-container::before {
+            left: 100%;
+        }
+
+        .client-logo {
+            max-width: 70%;
+            max-height: 70%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .client-name {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .client-item:hover .client-name {
+            opacity: 1;
+            bottom: -35px;
+        }
+
+        /* Animación de pulso para los logos */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .client-item:active .client-logo-container {
+            animation: pulse 0.3s ease;
+        }
+
+        /* Efectos hover para footer */
+        .hover-warning:hover {
+            color: var(--secondary-color) !important;
+            transition: color 0.3s ease;
+        }
+
+        /* Responsive para clientes */
+        @media (max-width: 992px) {
+            .clients-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .client-item {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .client-item {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float:hover {
+            background: #128c7e;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+
+        /* Animaciones adicionales */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#inicio">
-                <img src="images/logo-default-450x37v2.png" alt="DOJA S.A.S">
+                <img src="images/logo.png" alt="DOJA S.A.S">
             </a>
             
             <div class="d-none d-lg-flex align-items-center me-4">
@@ -54,7 +432,7 @@
                         <a class="nav-link" href="#nosotros">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="servicios.html">Servicios</a>
+                        <a class="nav-link" href="#servicios">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#clientes">Clientes</a>
@@ -72,23 +450,23 @@
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-8">
-                    <h6 class="text-uppercase text-warning mb-3">
+                    <h6 class="text-uppercase text-warning mb-3 animate-on-scroll">
                         Servicios de inspección acreditados ONAC para
                     </h6>
-                    <h1 class="display-4 fw-bold mb-4">
+                    <h1 class="display-4 fw-bold mb-4 animate-on-scroll">
                         Estaciones de <span class="text-warning">Servicio</span>
                     </h1>
-                    <p class="lead mb-4">
+                    <p class="lead mb-4 animate-on-scroll">
                         Con más de 27 años de experiencia ofrecemos soluciones técnicas avanzadas 
                         respaldadas por acreditación ONAC 24-OIN-059
                     </p>
-                    <div class="d-flex flex-wrap gap-3">
+                    <div class="d-flex flex-wrap gap-3 animate-on-scroll">
                         <a href="https://api.whatsapp.com/send?phone=+573112438979&text=Hola,%20DOJA%20SAS.%20Necesito%20información." 
                            class="btn btn-custom-primary btn-lg" target="_blank">
                             <i class="fab fa-whatsapp me-2"></i>
                             Ponte en contacto
                         </a>
-                        <a href="servicios.html" class="btn btn-outline-custom btn-lg">
+                        <a href="#servicios" class="btn btn-outline-custom btn-lg">
                             <i class="fas fa-cogs me-2"></i>
                             Ver servicios
                         </a>
@@ -103,9 +481,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="images/about-professional.jpg" alt="Equipo DOJA" class="img-fluid rounded shadow">
+                    <img src="images/Personal.jpg" alt="Equipo DOJA" class="img-fluid rounded shadow animate-on-scroll">
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 animate-on-scroll">
                     <h2 class="section-title text-start">¿Por qué elegirnos?</h2>
                     
                     <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
@@ -163,9 +541,9 @@
     <!-- Servicios Destacados -->
     <section id="servicios" class="py-5">
         <div class="container">
-            <h2 class="section-title text-center">Servicios Destacados</h2>
+            <h2 class="section-title text-center animate-on-scroll">Servicios Destacados</h2>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-shield-alt"></i>
@@ -181,7 +559,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-cube"></i>
@@ -197,7 +575,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 animate-on-scroll">
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-water"></i>
@@ -215,8 +593,8 @@
                 </div>
             </div>
             
-            <div class="text-center mt-5">
-                <a href="servicios.html" class="btn btn-custom-primary btn-lg">
+            <div class="text-center mt-5 animate-on-scroll">
+                <a href="#contacto" class="btn btn-custom-primary btn-lg">
                     <i class="fas fa-plus me-2"></i>
                     Ver todos los servicios
                 </a>
@@ -224,13 +602,44 @@
         </div>
     </section>
 
-    <!-- Clientes -->
-    <section id="clientes" class="py-5 bg-light-custom">
+    <!-- Clientes Mejorado -->
+    <section id="clientes" class="clients-section">
         <div class="container">
-            <h2 class="section-title text-center">Nuestros Clientes</h2>
-            <div class="row justify-content-center align-items-center g-4">
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="images/client-cencosud.png" alt="Cencosud" class="client-logo">
+            <h2 class="section-title text-center animate-on-scroll">Nuestros Clientes</h2>
+            <div class="clients-grid animate-on-scroll">
+                <div class="client-item" onclick="animateClick(this)">
+                    <div class="client-logo-container">
+                        <img src="images/Chevron.jpg" alt="Chevron" class="client-logo">
+                    </div>
+                    <div class="client-name">Chevron</div>
+                </div>
+                
+                <div class="client-item" onclick="animateClick(this)">
+                    <div class="client-logo-container">
+                        <img src="images/Biomax.jpg" alt="BioMax - Brío" class="client-logo">
+                    </div>
+                    <div class="client-name">BioMax - Brío</div>
+                </div>
+                
+                <div class="client-item" onclick="animateClick(this)">
+                    <div class="client-logo-container">
+                        <img src="images/Terpel.jpg" alt="Terpel" class="client-logo">
+                    </div>
+                    <div class="client-name">Terpel</div>
+                </div>
+                
+                <div class="client-item" onclick="animateClick(this)">
+                    <div class="client-logo-container">
+                        <img src="images/Primax.jpg" alt="Primax" class="client-logo">
+                    </div>
+                    <div class="client-name">Primax</div>
+                </div>
+                
+                <div class="client-item" onclick="animateClick(this)">
+                    <div class="client-logo-container">
+                        <img src="images/Cencosud.jpg" alt="Cencosud" class="client-logo">
+                    </div>
+                    <div class="client-name">Cencosud</div>
                 </div>
             </div>
         </div>
@@ -240,7 +649,7 @@
     <section class="py-5 bg-primary text-white">
         <div class="container text-center">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-8 animate-on-scroll">
                     <h2 class="display-5 fw-bold mb-4">Compromiso con nuestros clientes</h2>
                     <p class="lead mb-4">
                         En DOJA S.A.S estamos comprometidos con tu satisfacción y el cumplimiento 
@@ -257,7 +666,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contacto" class="bg-dark text-light py-5">
+    <footer id="contacto" class="py-5" style="background: linear-gradient(135deg, var(--primary-color), #1e3d72); color: white;">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
@@ -268,13 +677,13 @@
                     <div class="mb-3">
                         <i class="fas fa-phone me-2 text-warning"></i>
                         <a href="https://api.whatsapp.com/send?phone=+573112438979" 
-                           class="text-light text-decoration-none" target="_blank">311 243 89 79</a>
+                           class="text-white text-decoration-none" target="_blank">311 243 89 79</a>
                     </div>
                     <div class="mb-3">
                         <i class="fas fa-envelope me-2 text-warning"></i>
                         <div>
-                            <a href="mailto:inspecciones@doja.com.co" class="text-light text-decoration-none">inspecciones@doja.com.co</a><br>
-                            <a href="mailto:gerencia@doja.com.co" class="text-light text-decoration-none">gerencia@doja.com.co</a>
+                            <a href="mailto:inspecciones@doja.com.co" class="text-white text-decoration-none">inspecciones@doja.com.co</a><br>
+                            <a href="mailto:gerencia@doja.com.co" class="text-white text-decoration-none">gerencia@doja.com.co</a>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -287,31 +696,31 @@
                     <h5 class="text-warning mb-4">Servicios Especializados</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="servicios.html#hermeticidad" class="text-light text-decoration-none">
+                            <a href="#servicios" class="text-white text-decoration-none hover-warning">
                                 <i class="fas fa-shield-alt me-2 text-warning"></i>
                                 Pruebas de Hermeticidad
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="servicios.html#aforo" class="text-light text-decoration-none">
+                            <a href="#servicios" class="text-white text-decoration-none hover-warning">
                                 <i class="fas fa-cube me-2 text-warning"></i>
                                 Aforo Láser Calibex 3D
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="servicios.html#estanqueidad" class="text-light text-decoration-none">
+                            <a href="#servicios" class="text-white text-decoration-none hover-warning">
                                 <i class="fas fa-water me-2 text-warning"></i>
                                 Pruebas de Estanqueidad
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="servicios.html#conductividad" class="text-light text-decoration-none">
+                            <a href="#servicios" class="text-white text-decoration-none hover-warning">
                                 <i class="fas fa-bolt me-2 text-warning"></i>
                                 Verificación de Conductividad
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="servicios.html#otros" class="text-light text-decoration-none">
+                            <a href="#servicios" class="text-white text-decoration-none hover-warning">
                                 <i class="fas fa-microscope me-2 text-warning"></i>
                                 Otros Servicios
                             </a>
@@ -323,14 +732,14 @@
                     <h5 class="text-warning mb-4">Síguenos</h5>
                     <div class="d-flex gap-3 mb-4">
                         <a href="https://www.facebook.com/DojaTanknology" target="_blank" 
-                           class="text-light fs-4">
+                           class="text-white fs-4 hover-warning">
                             <i class="fab fa-facebook"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/doja-tanknology-1626921a5" target="_blank" 
-                           class="text-light fs-4">
+                           class="text-white fs-4 hover-warning">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-light fs-4">
+                        <a href="#" class="text-white fs-4 hover-warning">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -341,7 +750,7 @@
                     
                     <div class="mt-4">
                         <h6 class="text-warning mb-2">Certificaciones</h6>
-                        <small class="text-muted">
+                        <small class="text-light">
                             • Acreditación ONAC<br>
                             • Resolución 40198 de 2021<br>
                             • Normativas NFPA 30
@@ -350,17 +759,17 @@
                 </div>
             </div>
             
-            <hr class="my-4 border-secondary">
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.3);">
             
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <p class="mb-0">&copy; 2025 DOJA S.A.S. Todos los derechos reservados.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="politicas.html" class="text-light text-decoration-none me-3">
+                    <a href="#" class="text-white text-decoration-none me-3 hover-warning">
                         Política de privacidad
                     </a>
-                    <a href="#inicio" class="text-light text-decoration-none">
+                    <a href="#inicio" class="text-white text-decoration-none hover-warning">
                         Volver al inicio
                     </a>
                 </div>
@@ -377,19 +786,112 @@
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+        // Función para animar los clicks en los logos de clientes
+        function animateClick(element) {
+            // Guardar el estado original
+            const originalTransform = element.style.transform;
+            
+            // Aplicar animación de click
+            element.style.transform = 'scale(0.95)';
+            element.style.transition = 'transform 0.15s ease';
+            
+            setTimeout(() => {
+                element.style.transform = originalTransform || 'scale(1)';
+            }, 150);
+        }
+
+        // Animación al hacer scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            animateOnScroll();
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Smooth scrolling para los links del navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar activo según la sección
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop <= 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.service-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                const iconElement = this.querySelector('i');
+                if (iconElement) {
+                    iconElement.style.transform = 'rotate(360deg)';
+                    iconElement.style.transition = 'transform 0.6s ease';
+                }
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                const iconElement = this.querySelector('i');
+                if (iconElement) {
+                    iconElement.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Preloader simple
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
-</html>">
-                    <img src="images/client-chevron.png" alt="Chevron" class="client-logo">
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="images/client-biomax.png" alt="BioMax - Brío" class="client-logo">
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="images/client-terpel.png" alt="Terpel" class="client-logo">
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="images/client-primax.png" alt="Primax" class="client-logo">
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center
+</html>
